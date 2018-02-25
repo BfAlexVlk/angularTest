@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/select2/css/select2.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/google-code-prettify/prettify.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/textangular/src/textAngular.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/angular-perfect-scrollbar/perfect-scrollbar.min.css" />
+    <!-- Animate css -->
+    <link rel="stylesheet" type="text/css" href="/lib/animate.css/animate.min.css" />
+
+    <!-- Project styles -->
+    <link rel="stylesheet" href="app.css" type="text/css" />
+
+    <!--base-->
+    <script type="text/javascript" src="/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-perfect-scrollbar/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-perfect-scrollbar/angular-perfect-scrollbar.min.js"></script>
+
+    <script type="text/javascript" src="/lib/angular-ui-mask/mask.min.js"></script>
+
+    <!--rangy-->
+    <script type="text/javascript" src="/lib/rangy/rangy-core.min.js"></script>
+    <script type="text/javascript" src="/lib/rangy/rangy-classapplier.min.js"></script>
+    <script type="text/javascript" src="/lib/rangy/rangy-textrange.min.js"></script>
+    <!--angular components-->
+    <script type="text/javascript" src="/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-resource.min.js"></script>
+    <!--bootstrap-->
+    <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
+
+    <!--angular bootstrap-->
+    <script type="text/javascript" src="/lib/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+    <!-- bootstrap-wysiwyg -->
+    <script type="text/javascript" src="/lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="/lib/google-code-prettify/src/prettify.js"></script>
+
+    <!-- progressbar -->
+    <script type="text/javascript" src="/lib/bootstrap-progressbar/js/bootstrap-progressbar.min.js"></script>
+
+    <!--text Angular-->
+    <script type="text/javascript" src="/lib/textangular/dist/textAngular-rangy.min.js"></script>
+    <script type="text/javascript" src="/lib/textangular/dist/textAngular-sanitize.min.js"></script>
+    <script type="text/javascript" src="/lib/textangular/dist/textAngularSetup.js"></script>
+    <script type="text/javascript" src="/lib/textangular/dist/textAngular.js"></script>
+
+    <script src="/app/scripts/index.js"></script>
+    <script src="/app/scripts/controller.js"></script>
+
+</head>
+<body ng-app="test">
+    <h1>TypeScript HTML App</h1>
+    <div class="main container col-lg-12" ng-controller="TestController as ctrl">
+        <div class="col-sm-6">
+            <div class="input-form">
+                <form name="ctrl.form" novalidate="">
+                    <div class="row">
+                        <label for="title">
+                            Title
+                        </label>
+                        <input type="text" name="title" ng-model="ctrl.title" placeholder="plz input title" required="" />
+                    </div>
+                    <div class="row">
+                        <label for="description">
+                            Title
+                        </label>
+                        <input type="text" name="description" ng-model="ctrl.description" placeholder="plz input description" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="container preview" style="border: 1px solid black" ng-style="{'background-color' : ctrl.showPreview ? 'yellow' :'blue' }">
+                <div class="description">
+                    <!--  ng-show="!ctrl.showPreview"-->
+                    <h1>Description1 - {{ctrl.title}}</h1>
+                    <div> Description2 - {{ctrl.description}}</div>
+                </div>
+                <!-- ng-if="ctrl.showPreview-->
+                <div style="background-color: green;">
+                    <h1>Description 2 - {{ctrl.title}}</h1> -
+                    <div ta-bind ng-model="ctrl.description"></div>
+                </div>
+            </div>
+        </div>
+        <div class="editor text-center col-lg-12">
+            <div class="row" style="margin-top: 25px" text-angular ng-model="ctrl.description"></div>
+            <div ng-click="ctrl.onSend()">{{ctrl.enableParty ? 'party ' : 'ne party'}}</div>
+            <div ng-click="ctrl.togglePreview()">{{ctrl.showPreview ? 'Vkl': 'Vikl'}}</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

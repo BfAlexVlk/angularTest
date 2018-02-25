@@ -1,0 +1,29 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+.main {
+    background-color: :red;
+}
+
+.preview {
+    border: 1px solid green;
+}
+
+.input-form {
+    padding: 15px;
+    border: 1px solid yellow;
+}
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 20px 0;
+    background-color: :red;
+}
